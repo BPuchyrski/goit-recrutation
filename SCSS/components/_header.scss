@@ -1,0 +1,116 @@
+.header {
+  padding-top: 20px;
+  padding-bottom: 100px;
+  text-align: center;
+  background-image: linear-gradient(0deg, #fbe289e1 0%, #f48c82e7 100%),
+    url("./images/pngFiles/eagle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 700;
+  }
+}
+.header-nav {
+  margin-top: 10px;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #fff;
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  &__item {
+    margin: 0 8px;
+    padding-bottom: 5px;
+    &:hover {
+      color: $orange;
+      cursor: pointer;
+    }
+    &--active {
+      color: $orange;
+      border-bottom: 2px solid $orange;
+    }
+  }
+  &__icon {
+    fill: #fff;
+    &:hover {
+      fill: $orange;
+    }
+  }
+}
+
+.hero {
+  margin-top: 30px;
+  &__text {
+    font-size: 26px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.8px;
+    font-family: "Kaushan Script", cursive;
+  }
+  &__header {
+    margin-top: 10px;
+    font-size: 48px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 8px 20px;
+    color: #fff;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    padding-top: 28px;
+    padding-bottom: 240px;
+    &__logoAndNavContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+  .header-nav {
+    margin-top: 0;
+    &__list {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 40px;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
+  .hero {
+    margin-top: 164px;
+    &__text {
+      font-weight: 400;
+      font-size: 72px;
+    }
+    &__header {
+      font-size: 150px;
+      line-height: 140px;
+      margin-bottom: 123px;
+    }
+    &__button {
+      font-size: 14px;
+      padding: 16px 32px 14px 34px;
+      font-weight: 700;
+    }
+  }
+}
