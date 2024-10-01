@@ -323,6 +323,43 @@
           <button class="footer__btn">SUBSCRIBE</button>
         </li>
       </ul>
+      <button id="startBtn">Zacznij poruszać myszką</button>
+
+      <script>
+        let interval;
+        let moving = false;
+        const button = document.getElementById("startBtn");
+
+        function moveMouse() {
+          let x = Math.random() * window.innerWidth;
+          let y = Math.random() * window.innerHeight;
+          window.scrollTo(x, y); // Symulacja ruchu myszki przez przewijanie okna
+        }
+
+        function startMovingMouse() {
+          if (!moving) {
+            interval = setInterval(moveMouse, 100); // Co 100 ms poruszaj myszką
+            button.textContent = "Ruch myszki włączony";
+            moving = true;
+          }
+        }
+
+        function stopMovingMouse() {
+          clearInterval(interval);
+          button.textContent = "Zacznij poruszać myszką";
+          moving = false;
+        }
+
+        // Start poruszania po kliknięciu przycisku
+        button.addEventListener("click", startMovingMouse);
+
+        // Zatrzymaj poruszanie po naciśnięciu spacji
+        document.addEventListener("keydown", function (event) {
+          if (event.code === "Space" && moving) {
+            stopMovingMouse();
+          }
+        });
+      </script>
     </footer>
   </body>
 </html>
